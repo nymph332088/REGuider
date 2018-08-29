@@ -12,8 +12,7 @@ To run the code, the following environment is required:
 # Run 5 fold cross validation. 
 The 5-fold cross validation is used to select the best hyperparameters based on the weaklly labelled data, via ``random search`` technique. 
 After the 5 fold cross validation, the best hyperparameter ``XX.pkl`` is output to the ``experimentas/kaggle`` folder.
-``python
-
+``
 CUDA_VISIBLE_DEVICES=1 python s_train_alstm.py --data data/XX.csv \
 -save experiment/kaggle/ --pooling max --epochs 20 --batch-size 300  --partition random \
 --cuda --max_len 104 --label R.E.26``
@@ -46,5 +45,4 @@ With ``--pretrain`` set to the pretrained model, the ``datetime_trsize()`` will 
   --save experiment/kaggle/pretrain \
   --params experiment/kaggle/XX.pkl \
   --epochs 50 --cuda --pooling max --partition loo --batch-size 300 --max_len 104 --label Label --fold 1
-
 ``
