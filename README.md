@@ -22,8 +22,7 @@ CUDA_VISIBLE_DEVICES=1 python s_train_alstm.py --data data/XX.csv \
 First, comment the ``datetime_trsize()`` on line 375, uncomment the ``pretrain_model()`` on line 374.
 Then run:
 
-``
-CUDA_VISIBLE_DEVICES=0 python s_train_alstm.py --data data/testKaggleAll.csv \
+``CUDA_VISIBLE_DEVICES=0 python s_train_alstm.py --data data/testKaggleAll.csv \
 --save experiment/kaggle/pretrain/ \
 --params experiment/kaggle/XX.pkl \
 --epochs 2 --cuda --pooling max --batch-size 300 --max_len 104 --label R.E.26
@@ -34,9 +33,7 @@ First, uncomment the ``datetime_trsize()`` on line 375, comment the ``pretrain_m
 With ``--pretrain`` set to the pretrained model, the ``datetime_trsize()`` will evaluate the model trained on weakly labeled data using diffrent training size. 
 
 
-``python
-
-  CUDA_VISIBLE_DEVICES=0 python s_train_alstm.py --data data/testKaggleAll.csv \
+``CUDA_VISIBLE_DEVICES=0 python s_train_alstm.py --data data/testKaggleAll.csv \
   --save experiment/kaggle/pretrain \
   --params experiment/kaggle/XX.pkl \
   --epochs 50 --cuda --pooling max --partition loo --batch-size 300 --max_len 104 --label Label --fold 1 \
@@ -45,9 +42,7 @@ With ``--pretrain`` set to the pretrained model, the ``datetime_trsize()`` will 
 
 # Evaluate the model trained on human labels without pretrain
 
-``python
-
-  CUDA_VISIBLE_DEVICES=0 python s_train_alstm.py --data data/testKaggleAll.csv \
+``CUDA_VISIBLE_DEVICES=0 python s_train_alstm.py --data data/testKaggleAll.csv \
   --save experiment/kaggle/pretrain \
   --params experiment/kaggle/XX.pkl \
   --epochs 50 --cuda --pooling max --partition loo --batch-size 300 --max_len 104 --label Label --fold 1
