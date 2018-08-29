@@ -3,7 +3,7 @@
 
 REGuider contains code and datasets for EMNLP 2018 paper:
 
-* Zhang, S., He, L., Vucetic, S., Dragut, E., Regular Expression Guided Entity Mention Mining from Noisy Web Data, EMNLP, 2018
+* **Zhang, S., He, L., Vucetic, S., Dragut, E., Regular Expression Guided Entity Mention Mining from Noisy Web Data, EMNLP, 2018**
 
 To run the code, the following environment is required:
 * python==2.7.6
@@ -12,6 +12,7 @@ To run the code, the following environment is required:
 # Run 5 fold cross validation. 
 The 5-fold cross validation is used to select the best hyperparameters based on the weaklly labelled data, via ``random search`` technique. 
 After the 5 fold cross validation, the best hyperparameter ``XX.pkl`` is output to the ``experimentas/kaggle`` folder.
+
 ``
 CUDA_VISIBLE_DEVICES=1 python s_train_alstm.py --data data/XX.csv \
 -save experiment/kaggle/ --pooling max --epochs 20 --batch-size 300  --partition random \
